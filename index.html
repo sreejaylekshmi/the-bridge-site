@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Bridge By Sri | Marketing Data Consultant, Cambridge</title>
+<meta name="description" content="The Bridge By Sri connects your marketing data end to end, so B2B life science and SaaS companies know which marketing actually generates pipeline. Cambridge, UK.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   DESIGN TOKENS, "bridge at dusk"
+   deep pine teal + bridge-light amber on warm ivory
+   ═══════════════════════════════════════════════════════════════ */
+:root {
+  --deep:   #0C332E;   /* hero + footer background, deep pine teal   */
+  --deep2:  #114A42;   /* gradient partner for the hero               */
+  --paper:  #F6F4ED;   /* body background, warm ivory                */
+  --ink:    #143530;   /* headings on light sections                  */
+  --body:   #43514B;   /* paragraph text                              */
+  --amber:  #E9A13B;   /* bridge-light gold, CTAs, accents           */
+  --amber2: #F4B95F;   /* hover state                                 */
+  --cable:  #2E7D6B;   /* mid teal, secondary accents, links         */
+  --mist:   #E3DFD2;   /* borders on light                            */
+  --card:   #FFFFFF;
+  --lighttext: #EDE9DC; /* text on deep background                    */
+
+  --display: 'Space Grotesk', sans-serif;
+  --sans:    'IBM Plex Sans', sans-serif;
+  --mono:    'IBM Plex Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body { font-family: var(--sans); background: var(--paper); color: var(--body);
+       line-height: 1.7; font-size: 17px; }
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+.eyebrow { font-family: var(--mono); font-size: 13px; letter-spacing: 0.08em;
+           color: var(--cable); display: block; margin-bottom: 14px; }
+.eyebrow::before { content: "── "; color: var(--amber); }
+
+h1, h2, h3 { font-family: var(--display); color: var(--ink); line-height: 1.15; }
+h2 { font-size: clamp(28px, 4vw, 38px); margin-bottom: 18px; }
+h3 { font-size: 20px; margin-bottom: 8px; }
+p + p { margin-top: 14px; }
+a { color: var(--cable); }
+
+section { padding: 88px 0; }
+section + section { border-top: 1px solid var(--mist); }
+
+/* ── nav (sits on the deep hero) ── */
+.top { background: linear-gradient(160deg, var(--deep) 55%, var(--deep2)); }
+nav { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; }
+.wordmark { font-family: var(--display); font-weight: 700; font-size: 17px;
+            color: var(--lighttext); text-decoration: none; letter-spacing: 0.01em; }
+.wordmark em { font-style: normal; color: var(--amber); }
+nav .links a { font-family: var(--mono); font-size: 14px; text-decoration: none;
+               color: var(--lighttext); margin-left: 26px; opacity: 0.85; }
+nav .links a:hover { color: var(--amber); opacity: 1; }
+
+/* ── hero on deep teal ── */
+.hero { padding: 84px 0 96px; }
+.hero .eyebrow { color: var(--amber); }
+.hero .eyebrow::before { color: var(--lighttext); }
+.hero h1 { color: #FFFFFF; font-size: clamp(38px, 6vw, 60px); font-weight: 700;
+           max-width: 18ch; margin-bottom: 26px; }
+.hero .lede { color: var(--lighttext); font-size: 20px; max-width: 56ch; margin-bottom: 38px; }
+
+/* the signature: a suspension-bridge span under the key word */
+.span-mark { position: relative; display: inline-block; white-space: nowrap; }
+.span-mark svg { position: absolute; left: -2%; bottom: -0.42em; width: 104%;
+                 height: 0.62em; overflow: visible; }
+.span-mark path, .span-mark line {
+  fill: none; stroke: var(--amber); stroke-width: 3.2;
+  stroke-linecap: round; stroke-dasharray: 400; stroke-dashoffset: 400;
+  animation: draw 1.6s ease 0.35s forwards;
+}
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .span-mark path, .span-mark line { animation: none; stroke-dashoffset: 0; } }
+
+.btn { display: inline-block; font-family: var(--mono); font-size: 15px;
+       padding: 14px 26px; border-radius: 6px; text-decoration: none;
+       transition: transform 0.15s ease, background 0.15s ease; }
+.btn:hover { transform: translateY(-2px); }
+.btn:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+.btn-primary { background: var(--amber); color: var(--deep); font-weight: 500; }
+.btn-primary:hover { background: var(--amber2); }
+.btn-ghost { color: var(--lighttext); border: 1.5px solid rgba(237,233,220,0.5); margin-left: 12px; }
+.btn-ghost:hover { border-color: var(--amber); color: var(--amber); }
+/* on light sections */
+.btn-deep { background: var(--deep); color: var(--lighttext); }
+
+.toolkit { font-family: var(--mono); font-size: 13px; color: var(--lighttext);
+           opacity: 0.75; border-top: 1px solid rgba(237,233,220,0.18);
+           padding: 16px 0 26px; letter-spacing: 0.04em; }
+
+/* ── cards ── */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 34px; }
+@media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+.card { background: var(--card); border: 1px solid var(--mist); border-radius: 10px;
+        padding: 28px 26px; border-top: 3px solid var(--amber); }
+.card .tag { font-family: var(--mono); font-size: 12px; color: var(--cable);
+             display: block; margin-bottom: 12px; }
+.card p { font-size: 15.5px; }
+.card .price { font-family: var(--mono); font-size: 13px; color: var(--ink);
+               margin-top: 16px; display: block; }
+
+/* ── approach steps ── */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; margin-top: 34px; }
+@media (max-width: 800px) { .steps { grid-template-columns: 1fr; } }
+.step h3::before { content: attr(data-k); display: block; font-family: var(--mono);
+                   font-size: 13px; color: var(--cable); margin-bottom: 8px; font-weight: 400; }
+.step p { font-size: 15.5px; }
+
+/* ── about ── */
+.about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: start; }
+@media (max-width: 800px) { .about-grid { grid-template-columns: 1fr; } }
+.fact-list { font-family: var(--mono); font-size: 14px; list-style: none; }
+.fact-list li { padding: 12px 0; border-bottom: 1px solid var(--mist); }
+.fact-list li::before { content: "▸ "; color: var(--amber); }
+
+/* ── blog teaser ── */
+.post-link { display: block; background: var(--card); border: 1px solid var(--mist);
+             border-radius: 10px; padding: 22px 26px; text-decoration: none; margin-top: 14px; }
+.post-link:hover { border-color: var(--cable); }
+.post-link .date { font-family: var(--mono); font-size: 12.5px; color: var(--body); }
+.post-link .t { font-family: var(--display); color: var(--ink); font-size: 19px;
+                display: block; margin-top: 4px; }
+
+/* ── contact: deep panel again, mirrors the hero ── */
+.contact-band { background: linear-gradient(160deg, var(--deep) 55%, var(--deep2));
+                text-align: center; padding: 88px 0; }
+.contact-band h2 { color: #fff; }
+.contact-band p { color: var(--lighttext); max-width: 52ch; margin: 0 auto 30px; }
+.contact-band .eyebrow { color: var(--amber); display: inline-block; }
+.contact-band .eyebrow::before { color: var(--lighttext); }
+
+footer { background: var(--deep); border-top: 1px solid rgba(237,233,220,0.15);
+         padding: 30px 0; font-family: var(--mono); font-size: 13px;
+         color: var(--lighttext); }
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+footer a { color: var(--amber); }
+</style>
+</head>
+<body>
+
+<!-- ════════════════ DEEP HERO PANEL ════════════════ -->
+<div class="top">
+  <div class="wrap">
+    <nav>
+      <a class="wordmark" href="/">The Bridge <em>By Sri</em></a>
+      <div class="links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <span class="eyebrow">marketing data consultancy · cambridge, uk</span>
+      <h1>The bridge between your marketing and what actually
+        <span class="span-mark">works<svg viewBox="0 0 100 26" aria-hidden="true"><line x1="6" y1="2" x2="6" y2="22"/><line x1="94" y1="2" x2="94" y2="22"/><path d="M2 22 L98 22 M6 4 Q50 26 94 4"/></svg></span>
+      </h1>
+      <p class="lede">
+        Most B2B companies spend on content, events, ads and LinkedIn, and can't
+        say which of it generates pipeline. I'm a data scientist who connects your
+        marketing data end to end, so budget decisions run on evidence instead of gut feel.
+      </p>
+      <a class="btn btn-primary" href="#contact">Book a conversation</a>
+      <a class="btn btn-ghost" href="#services">See how I help</a>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="toolkit">
+      GA4 · Search Console · HubSpot · LinkedIn · Meta &amp; Google Ads · attribution modelling · Python
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════ SERVICES ════════════════ -->
+<section id="services">
+  <div class="wrap">
+    <span class="eyebrow">services</span>
+    <h2>Three ways I help</h2>
+    <div class="grid">
+      <div class="card">
+        <span class="tag">one-off · 2 weeks</span>
+        <h3>Marketing Data Audit</h3>
+        <p>A full review of your website funnel, analytics setup, SEO, content and
+           social, ending in a prioritised report of what's working, what's leaking,
+           and the few fixes that matter most.</p>
+        <span class="price">fixed fee · report + walkthrough call</span>
+      </div>
+      <div class="card">
+        <span class="tag">monthly</span>
+        <h3>Analytics Retainer</h3>
+        <p>I become your data person on call: monthly reporting in plain English,
+           tracking that actually captures conversions, and a straight answer to
+           "what should we do more of?"</p>
+        <span class="price">monthly · cancel any time</span>
+      </div>
+      <div class="card">
+        <span class="tag">half or full day</span>
+        <h3>Team Workshop</h3>
+        <p>Hands-on training for your marketing team: reading GA4 without fear,
+           setting up attribution, and building reports leadership actually trusts.</p>
+        <span class="price">on-site in Cambridge or remote</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ APPROACH ════════════════ -->
+<section id="approach">
+  <div class="wrap">
+    <span class="eyebrow">how i work</span>
+    <h2>Evidence first, opinions second</h2>
+    <div class="steps">
+      <div class="step">
+        <h3 data-k="measure →">Get the data honest</h3>
+        <p>Most marketing data is broken before anyone analyses it: missing tracking,
+           untagged links, forms that don't record. I fix the foundations first.</p>
+      </div>
+      <div class="step">
+        <h3 data-k="connect →">Join the dots</h3>
+        <p>Website, CRM, ads and content data usually live in silos. Connected,
+           they answer the only question that matters: what creates pipeline?</p>
+      </div>
+      <div class="step">
+        <h3 data-k="decide →">Make it usable</h3>
+        <p>Findings arrive as clear recommendations a non-technical founder can act
+           on. Never a dashboard dump or a 40-page deck nobody reads.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ ABOUT ════════════════ -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <span class="eyebrow">about</span>
+        <h2>A data scientist on marketing's side</h2>
+        <!-- EDIT ME: make this yours. Keep it honest and first-person. -->
+        <p>I'm Sri. I've spent four years as a data scientist in corporate research,
+           building models, questioning numbers, and translating messy datasets
+           into decisions. Then I noticed something: the businesses around me in
+           Cambridge were making their biggest marketing decisions with almost no
+           data at all.</p>
+        <p>Marketing teams have more tools than ever and less clarity than ever.
+           The Bridge is my answer to that gap: bringing the standards of data
+           science to the question every founder asks:
+           <em>is our marketing actually working?</em></p>
+      </div>
+      <ul class="fact-list">
+        <li>4 years in corporate data science</li>
+        <li>Based in Cambridge, UK</li>
+        <li>Focus: B2B, life science &amp; SaaS</li>
+        <li>Python, statistics &amp; ML background</li>
+        <li>Plain-English reporting, always</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ TESTIMONIALS, hidden until you have them ════════════════
+     WHEN READY: delete this opening comment line and the closing one below.
+<section id="testimonials">
+  <div class="wrap">
+    <span class="eyebrow">what clients say</span>
+    <h2>Results, in their words</h2>
+    <div class="grid">
+      <div class="card">
+        <p>"Quote goes here. Specific and outcome-focused."</p>
+        <span class="price">Name, Role, Company</span>
+      </div>
+      <div class="card">
+        <p>"Second quote here."</p>
+        <span class="price">Name, Role, Company</span>
+      </div>
+      <div class="card">
+        <p>"Third quote here."</p>
+        <span class="price">Name, Role, Company</span>
+      </div>
+    </div>
+  </div>
+</section>
+════════════════ end testimonials ════════════════ -->
+
+<!-- ════════════════ BLOG TEASER ════════════════ -->
+<section id="writing">
+  <div class="wrap">
+    <span class="eyebrow">writing</span>
+    <h2>Notes from the bridge</h2>
+    <p>Occasional writing on analytics, attribution and what the numbers actually mean.</p>
+    <!-- EDIT ME: when you publish a post, copy this block and update it -->
+    <a class="post-link" href="blog/posts/2026-07-your-marketing-data-is-lying.html">
+      <span class="date">2026-07 · first post</span>
+      <span class="t">Your marketing data is probably lying to you (and how to tell)</span>
+    </a>
+    <p style="margin-top:22px"><a href="blog/index.html">All posts →</a></p>
+  </div>
+</section>
+
+<!-- ════════════════ CONTACT ════════════════ -->
+<div id="contact" class="contact-band">
+  <div class="wrap">
+    <span class="eyebrow">contact</span>
+    <h2>Not sure if your marketing is working?</h2>
+    <p>That's exactly the conversation to have. Email me and tell me a little about
+       your business. I'll reply within a day with honest first thoughts, no pitch.</p>
+    <a class="btn btn-primary" href="mailto:theteambridge.team@gmail.com">theteambridge.team@gmail.com</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 The Bridge By Sri · Cambridge, UK</span>
+    <!-- EDIT ME: your LinkedIn URL -->
+    <span><a href="https://linkedin.com/in/your-profile">LinkedIn</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
