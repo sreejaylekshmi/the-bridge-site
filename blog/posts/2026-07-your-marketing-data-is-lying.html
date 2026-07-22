@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- EDIT per post: title shows in Google + browser tab -->
+<title>Your marketing data is probably lying to you (and how to tell)</title>
+<meta name="description" content="Five silent tracking failures that make good marketing look bad and bad marketing look fine.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root { --paper:#F6F4ED; --ink:#143530; --body:#43514B; --cobalt:#2E7D6B;
+        --mist:#E3DFD2; --signal:#E9A13B;
+        --display:'Space Grotesk',sans-serif; --sans:'IBM Plex Sans',sans-serif; --mono:'IBM Plex Mono',monospace; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:var(--sans); background:var(--paper); color:var(--body); line-height:1.75; font-size:17.5px; }
+.wrap { max-width:680px; margin:0 auto; padding:0 24px; }
+nav { display:flex; justify-content:space-between; padding:22px 0; }
+.wordmark { font-family:var(--mono); font-size:15px; color:var(--ink); text-decoration:none; }
+.wordmark span { color:var(--signal); }
+nav a.back { font-family:var(--mono); font-size:14px; color:var(--cobalt); text-decoration:none; }
+article { padding:44px 0 80px; }
+.date { font-family:var(--mono); font-size:13px; color:var(--cobalt); }
+h1 { font-family:var(--display); color:var(--ink); font-size:clamp(28px,5vw,40px); line-height:1.2; margin:10px 0 30px; }
+h2 { font-family:var(--display); color:var(--ink); font-size:23px; margin:40px 0 12px; }
+p + p { margin-top:16px; }
+a { color:var(--cobalt); }
+.cta { border-top:1px solid var(--mist); margin-top:56px; padding-top:28px; font-size:16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="wordmark" href="../../index.html">The Bridge <span>By Sri</span></a>
+    <a class="back" href="../index.html">← all posts</a>
+  </nav>
+
+  <article>
+    <span class="date">July 2026 · 4 min read</span>
+    <h1>Your marketing data is probably lying to you (and how to tell)</h1>
+
+    <p>Most businesses I look at don't have a marketing problem. They have a
+       measurement problem wearing a marketing problem's clothes.</p>
+
+    <p>Before any analysis, the data itself has to be trustworthy, and in most
+       small B2B companies it quietly isn't. Here are the five failures I check
+       first, because any one of them makes every downstream number wrong.</p>
+
+    <h2>1. Conversions that were never set up</h2>
+    <p>GA4 tracks page views out of the box, but not form submissions, phone
+       clicks or demo bookings unless someone configures them. If nobody did,
+       your "conversion rate" is a number about nothing.</p>
+
+    <h2>2. Untagged links</h2>
+    <p>Share a link on LinkedIn without UTM parameters and the click arrives in
+       your analytics with no origin. Enough of these and "Direct traffic"
+       becomes a black hole hiding your best channel.</p>
+
+    <h2>3. The dark social gap</h2>
+    <p>Links forwarded in WhatsApp, Slack and email all show up as Direct too.
+       B2B buying conversations happen in exactly these places, so the channel
+       doing the real work often gets zero credit.</p>
+
+    <h2>4. Your own team in the numbers</h2>
+    <p>If internal traffic isn't filtered, ten employees checking the website
+       daily can outnumber your genuine visitors, flattening every trend you
+       think you're seeing.</p>
+
+    <h2>5. Last-click thinking</h2>
+    <p>A buyer reads three articles, attends a webinar, then Googles your name
+       and converts. Last-click attribution hands all the credit to "brand
+       search", and quietly argues for cutting the content that created the
+       demand.</p>
+
+    <p>None of these show up as errors. Everything looks fine, but the numbers are
+       just wrong. Which is why the first step of any engagement I do is an
+       audit of the measurement itself, before believing a single chart.</p>
+
+    <div class="cta">
+      <p><strong>Suspect your own numbers?</strong> I run a two-week marketing
+         data audit that starts exactly here:
+         <a href="../../index.html#contact">get in touch</a>.</p>
+    </div>
+  </article>
+</div>
+</body>
+</html>
